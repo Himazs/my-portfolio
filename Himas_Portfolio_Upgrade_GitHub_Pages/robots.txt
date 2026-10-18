@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://himazs.github.io/Himas/sitemap.xml
