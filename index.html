@@ -51,8 +51,53 @@
 /* Ensures optional social accounts stay hidden until an actual URL is provided. */
 [hidden]{display:none!important}
 
-  </style>
 
+/* === V3.1: REAL PROJECT SCREENSHOTS, NOT TEXT OVERLAYS ===
+   Only display the decorated fallback when the actual screenshot failed to load.
+   As soon as the screenshot is ready, remove the fallback from layout entirely.
+*/
+.project-media.has-cover .project-media-fallback { display: none; }
+.project-media.has-cover .project-type { display: none; }
+.project-media .project-cover { z-index: 1; object-fit: contain; }
+.project-media.has-cover { background: #edf0ec; }
+.project-media.has-cover.theme-purple { background: #f8f9f7; } /* Mobile app screenshot */
+.project-media.has-cover.theme-green { background: #0c0e10; } /* Insurance site screenshot */
+.project-media.has-cover.theme-blue { background: #ecf0f3; }
+.project-media.has-cover.theme-rose { background: #f3eee8; }
+.project-media.has-cover.theme-sand { background: #eeece4; }
+.project-media.has-cover.theme-mint { background: #edf2ed; }
+.project-media.has-cover.theme-sky { background: #eff4f3; }
+/* Keep images crisp, including mobile UI and dashboard labels. */
+.project-card:hover .project-cover.image-ready { transform: none; }
+/* Gallery controls are below the screenshot so they never obscure the project. */
+.project-actions .gallery-open {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--ink);
+  font: 700 12px var(--display);
+  cursor: pointer;
+}
+.project-actions .gallery-open .icon { width: 15px; height: 15px; }
+.project-actions .gallery-open:hover,
+.project-actions .gallery-open:focus-visible { color: var(--orange); background: none; }
+.project-actions .gallery-open:focus-visible { outline: 2px solid var(--orange); outline-offset: 5px; }
+@media (max-width: 640px) {
+  .project-media { height: clamp(230px,70vw,370px); }
+  .project-actions { gap: 16px 20px; }
+}
+
+</style>
+  
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mohommad Himas","jobTitle":"Freelance Web Developer","url":"https://himazs.github.io/Himas/","worksFor":{"@type":"Organization","name":"Axyntra Digital Solutions","url":"https://www.axyntra.lk/"},"sameAs":["https://github.com/Himazs","https://www.linkedin.com/in/mohammed-himas/"]}</script>
   <title>Mohommad Himas — Portfolio &amp; Freelance Web Developer</title>
 </head>
@@ -87,7 +132,7 @@
   <div class="container header-inner">
     <a href="#top" class="brand" aria-label="Mohommad Himas, back to top"><span class="brand-monogram">h<span>·</span></span><span class="brand-label">MOHOMMAD<br><strong>HIMAS</strong></span></a>
     <nav class="desktop-nav" id="main-nav" aria-label="Main navigation"><a href="#work">Selected work</a><a href="#services">What I do</a><a href="#about">About me</a><a href="#contact">Contact</a></nav>
-    <div class="header-right"><a class="header-email" href="mailto:mhdhimas99@gmail.com"><svg class="icon " aria-hidden="true"><use href="#icon-mail"></use></svg><span>Email me</span></a><a class="nav-cta" href="#contact">Let's work together <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><button type="button" class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open mobile menu"><svg class="icon " aria-hidden="true"><use href="#icon-menu"></use></svg></button></div>
+    <div class="header-right"><a class="header-email" href="mailto:himasmohommad@gmail.com"><svg class="icon " aria-hidden="true"><use href="#icon-mail"></use></svg><span>Email me</span></a><a class="nav-cta" href="#contact">Let's work together <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><button type="button" class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open mobile menu"><svg class="icon " aria-hidden="true"><use href="#icon-menu"></use></svg></button></div>
   </div>
   <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation" hidden><a href="#work">Selected work</a><a href="#services">What I do</a><a href="#about">About me</a><a href="#contact">Contact</a></nav>
 </header>
@@ -101,7 +146,7 @@
       <p class="hero-desc">Freelance web developer and software engineering graduate based in Sri Lanka. I create purposeful business websites, e-commerce experiences and web applications — with care for the details.</p>
       <div class="hero-buttons"><a class="button button-dark" href="#contact">Tell me about your project <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><a class="button button-text" href="#work">See selected work <svg class="icon " aria-hidden="true"><use href="#icon-arrow"></use></svg></a></div>
       <div class="hero-social-row"><span>CONNECT WITH ME</span><div class="social-set">
-      <a class="social-link " href="https://github.com/Himazs" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub profile"><svg class="icon " aria-hidden="true"><use href="#icon-github"></use></svg></a><a class="social-link " href="https://www.linkedin.com/in/mohammed-himas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn profile"><svg class="icon " aria-hidden="true"><use href="#icon-linkedin"></use></svg></a><a class="social-link " href="https://wa.me/94703883436" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp business chat" title="WhatsApp business chat"><svg class="icon " aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a><a class="social-link " href="mailto:mhdhimas99@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email Mohommad Himas" title="Email Mohommad Himas"><svg class="icon " aria-hidden="true"><use href="#icon-mail"></use></svg></a>
+      <a class="social-link " href="https://github.com/Himazs" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub profile"><svg class="icon " aria-hidden="true"><use href="#icon-github"></use></svg></a><a class="social-link " href="https://www.linkedin.com/in/mohammed-himas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn profile"><svg class="icon " aria-hidden="true"><use href="#icon-linkedin"></use></svg></a><a class="social-link " href="https://wa.me/94703883436" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp business chat" title="WhatsApp business chat"><svg class="icon " aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a><a class="social-link " href="mailto:himasmohommad@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email Mohommad Himas" title="Email Mohommad Himas"><svg class="icon " aria-hidden="true"><use href="#icon-mail"></use></svg></a>
       <a class="social-link social-optional" data-social="instagram" href="#" hidden aria-label="Instagram account"><svg class="icon " aria-hidden="true"><use href="#icon-instagram"></use></svg></a><a class="social-link social-optional" data-social="facebook" href="#" hidden aria-label="Facebook page"><svg class="icon " aria-hidden="true"><use href="#icon-facebook"></use></svg></a></div></div>
     </div>
     <div class="hero-stage">
@@ -122,78 +167,78 @@
         <div class="project-media-fallback"><span class="fallback-number">01 / SELECTED WORK</span><span class="fallback-display">Masjidul Hassaniya</span><span class="fallback-line">A clearer digital home for a community.</span><span class="fallback-halo"></span></div>
         <img class="project-cover" src="./assets/mosque/palli.png" alt="Masjidul Hassaniya project screenshot" loading="lazy" decoding="async">
         <span class="project-type">Community website</span>
-        <button type="button" class="gallery-open" data-open-gallery="masjid" aria-label="View images for Masjidul Hassaniya"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button>
+        
       </div>
       <div class="project-card-body"><div class="project-topline"><span>PROJECT / 01</span><span>Community website</span></div>
       <h3>Masjidul Hassaniya</h3><p>A purposeful website for a local mosque, making community information easier to find and manage.</p>
       <div class="project-tags"><span>PHP</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-      <div class="project-actions"><a href="https://www.masjidulhassaniya.lk/" target="_blank" rel="noopener noreferrer">Live website <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><a href="https://github.com/Himazs/masjidul_hasaniya_jumma_mosque" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
+      <div class="project-actions"><button type="button" class="gallery-open" data-open-gallery="masjid" aria-label="View images for Masjidul Hassaniya"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button><a href="https://www.masjidulhassaniya.lk/" target="_blank" rel="noopener noreferrer">Live website <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><a href="https://github.com/Himazs/masjidul_hasaniya_jumma_mosque" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
     </article><article class="project-card" data-category="website" data-project="hitec">
       <div class="project-media theme-rose">
         <div class="project-media-fallback"><span class="fallback-number">02 / SELECTED WORK</span><span class="fallback-display">Hitec Shoes</span><span class="fallback-line">Products first. A better browsing experience.</span><span class="fallback-halo"></span></div>
         <img class="project-cover" src="./assets/Hitec-Shoes/hero.png" alt="Hitec Shoes project screenshot" loading="lazy" decoding="async">
         <span class="project-type">Product showcase</span>
-        <button type="button" class="gallery-open" data-open-gallery="hitec" aria-label="View images for Hitec Shoes"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button>
+        
       </div>
       <div class="project-card-body"><div class="project-topline"><span>PROJECT / 02</span><span>Product showcase</span></div>
       <h3>Hitec Shoes</h3><p>A footwear showcase that presents products and helps visitors explore the brand online.</p>
       <div class="project-tags"><span>PHP</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-      <div class="project-actions"><a href="https://himazs.github.io/Hitec-Shoes/" target="_blank" rel="noopener noreferrer">Live website <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><a href="https://github.com/Himazs/Hitec-Shoes" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
+      <div class="project-actions"><button type="button" class="gallery-open" data-open-gallery="hitec" aria-label="View images for Hitec Shoes"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button><a href="https://himazs.github.io/Hitec-Shoes/" target="_blank" rel="noopener noreferrer">Live website <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><a href="https://github.com/Himazs/Hitec-Shoes" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
     </article><article class="project-card" data-category="website" data-project="victoria">
       <div class="project-media theme-blue">
         <div class="project-media-fallback"><span class="fallback-number">03 / SELECTED WORK</span><span class="fallback-display">Victoria Shoes</span><span class="fallback-line">A brand presence with character.</span><span class="fallback-halo"></span></div>
         <img class="project-cover" src="./assets/Victoria/hero.png" alt="Victoria Shoes project screenshot" loading="lazy" decoding="async">
         <span class="project-type">Brand website</span>
-        <button type="button" class="gallery-open" data-open-gallery="victoria" aria-label="View images for Victoria Shoes"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button>
+        
       </div>
       <div class="project-card-body"><div class="project-topline"><span>PROJECT / 03</span><span>Brand website</span></div>
       <h3>Victoria Shoes</h3><p>A responsive business portfolio built around the company’s brand identity, services and work.</p>
       <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-      <div class="project-actions"><a href="https://himazs.github.io/Victoria_Shoes/" target="_blank" rel="noopener noreferrer">Live website <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><a href="https://github.com/Himazs/Victoria_Shoes" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
+      <div class="project-actions"><button type="button" class="gallery-open" data-open-gallery="victoria" aria-label="View images for Victoria Shoes"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button><a href="https://himazs.github.io/Victoria_Shoes/" target="_blank" rel="noopener noreferrer">Live website <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><a href="https://github.com/Himazs/Victoria_Shoes" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
     </article><article class="project-card" data-category="app" data-project="cab">
       <div class="project-media theme-sand">
         <div class="project-media-fallback"><span class="fallback-number">04 / SELECTED WORK</span><span class="fallback-display">Mega City Cab</span><span class="fallback-line">Making everyday journeys easier.</span><span class="fallback-halo"></span></div>
         <img class="project-cover" src="./assets/Megacity/cab.png" alt="Mega City Cab project screenshot" loading="lazy" decoding="async">
         <span class="project-type">Java application</span>
-        <button type="button" class="gallery-open" data-open-gallery="cab" aria-label="View images for Mega City Cab"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button>
+        
       </div>
       <div class="project-card-body"><div class="project-topline"><span>PROJECT / 04</span><span>Java application</span></div>
       <h3>Mega City Cab</h3><p>A cab-service application developed as a software engineering degree project.</p>
       <div class="project-tags"><span>Java</span><span>Application development</span></div>
-      <div class="project-actions"><a href="https://github.com/Himazs/MegacitycabService" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
+      <div class="project-actions"><button type="button" class="gallery-open" data-open-gallery="cab" aria-label="View images for Mega City Cab"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button><a href="https://github.com/Himazs/MegacitycabService" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
     </article><article class="project-card" data-category="app" data-project="flood">
       <div class="project-media theme-purple">
         <div class="project-media-fallback"><span class="fallback-number">05 / SELECTED WORK</span><span class="fallback-display">Smart Flood</span><span class="fallback-line">Information that matters, when it matters.</span><span class="fallback-halo"></span></div>
         <img class="project-cover" src="./assets/Smart_Flood/home.png" alt="Smart Flood project screenshot" loading="lazy" decoding="async">
         <span class="project-type">Mobile &amp; web app</span>
-        <button type="button" class="gallery-open" data-open-gallery="flood" aria-label="View images for Smart Flood"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button>
+        
       </div>
       <div class="project-card-body"><div class="project-topline"><span>PROJECT / 05</span><span>Mobile &amp; web app</span></div>
       <h3>Smart Flood</h3><p>An early-warning system concept designed to share flood-related information with public and official users.</p>
       <div class="project-tags"><span>Dart</span><span>PHP</span><span>JavaScript</span></div>
-      <div class="project-actions"><a href="https://github.com/Himazs/Smart_Flood" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
+      <div class="project-actions"><button type="button" class="gallery-open" data-open-gallery="flood" aria-label="View images for Smart Flood"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button><a href="https://github.com/Himazs/Smart_Flood" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
     </article><article class="project-card" data-category="data" data-project="insurance">
       <div class="project-media theme-green">
         <div class="project-media-fallback"><span class="fallback-number">06 / SELECTED WORK</span><span class="fallback-display">Insurance Premium Predictor</span><span class="fallback-line">Turning data into practical estimates.</span><span class="fallback-halo"></span></div>
         <img class="project-cover" src="./assets/Insurance/iq.png" alt="Insurance Premium Predictor project screenshot" loading="lazy" decoding="async">
         <span class="project-type">Machine learning</span>
-        <button type="button" class="gallery-open" data-open-gallery="insurance" aria-label="View images for Insurance Premium Predictor"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button>
+        
       </div>
       <div class="project-card-body"><div class="project-topline"><span>PROJECT / 06</span><span>Machine learning</span></div>
       <h3>Insurance Premium Predictor</h3><p>A machine learning prototype that compares predictive models and presents premium estimates in a web interface.</p>
       <div class="project-tags"><span>Python</span><span>Jupyter</span><span>HTML</span><span>JavaScript</span></div>
-      <div class="project-actions"><a href="https://himazs.github.io/Insurance_Amount_Prediction/" target="_blank" rel="noopener noreferrer">Live website <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><a href="https://github.com/Himazs/Insurance_Amount_Prediction" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
+      <div class="project-actions"><button type="button" class="gallery-open" data-open-gallery="insurance" aria-label="View images for Insurance Premium Predictor"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button><a href="https://himazs.github.io/Insurance_Amount_Prediction/" target="_blank" rel="noopener noreferrer">Live website <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><a href="https://github.com/Himazs/Insurance_Amount_Prediction" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
     </article><article class="project-card" data-category="app" data-project="floodweb">
       <div class="project-media theme-sky">
         <div class="project-media-fallback"><span class="fallback-number">07 / SELECTED WORK</span><span class="fallback-display">Smart Flood — Web</span><span class="fallback-line">Complex data, clearer interaction.</span><span class="fallback-halo"></span></div>
         <img class="project-cover" src="./assets/Smart_Flood/web.png" alt="Smart Flood — Web project screenshot" loading="lazy" decoding="async">
         <span class="project-type">Web application</span>
-        <button type="button" class="gallery-open" data-open-gallery="floodweb" aria-label="View images for Smart Flood — Web"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button>
+        
       </div>
       <div class="project-card-body"><div class="project-topline"><span>PROJECT / 07</span><span>Web application</span></div>
       <h3>Smart Flood — Web</h3><p>A related web interface developed for the Smart Flood early-warning project.</p>
       <div class="project-tags"><span>PHP</span><span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-      <div class="project-actions"><a href="https://github.com/Himazs/Smart_Flood_Webapp" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
+      <div class="project-actions"><button type="button" class="gallery-open" data-open-gallery="floodweb" aria-label="View images for Smart Flood — Web"><svg class="icon " aria-hidden="true"><use href="#icon-expand"></use></svg><span>View gallery</span></button><a href="https://github.com/Himazs/Smart_Flood_Webapp" target="_blank" rel="noopener noreferrer">Source code <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div>
     </article></div>
     <div class="project-footer"><p>Looking for more technical work?</p><a href="https://github.com/Himazs?tab=repositories" target="_blank" rel="noopener noreferrer">Browse my GitHub repositories <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div>
   </div>
@@ -210,7 +255,7 @@
 <section class="section about-section" id="about" aria-labelledby="about-title"><div class="container about-layout"><div class="about-visual"><div class="about-photo"><div class="about-photo-fallback"><span>H<span class="orange-dot">.</span></span><small>MOHOMMAD HIMAS</small></div><img src="./assets/images/himas-about.jpg" data-fallback-src="./profile.png" alt="Mohommad Himas, web developer" loading="lazy" decoding="async"></div><div class="about-photo-caption">DEVELOPER. BUILDER. PROBLEM SOLVER.</div></div><div class="about-text"><p class="eyebrow"><span>03 /</span> ABOUT ME</p><h2 id="about-title" class="section-title">A person behind<br>the <em>pixels.</em></h2><p class="about-lead">I'm Mohommad Himas, a Sri Lankan software engineering graduate who enjoys building digital things that solve real problems.</p><p>My work brings together website development, practical application building, and a strong interest in how people experience technology. I work independently and through Axyntra Digital Solutions.</p><div class="about-facts"><div><span>BASED IN</span><strong>Sri Lanka</strong></div><div><span>EDUCATION</span><strong>BSc (Hons) Software Engineering</strong></div><div><span>DEVELOPMENT</span><strong>Websites · Applications</strong></div><div><span>BUSINESS</span><strong>Axyntra Digital Solutions</strong></div></div><p class="about-education">Higher Diploma in Computing &amp; Software Engineering, and BSc (Hons) Software Engineering — studied via ICBT Campus.</p><a href="https://www.linkedin.com/in/mohammed-himas/" target="_blank" rel="noopener noreferrer" class="inline-arrow">More about me on LinkedIn <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div></div></section>
 <section class="section capabilities-section" aria-labelledby="tech-title"><div class="container capability-layout"><div><p class="eyebrow"><span>04 /</span> THE TOOLKIT</p><h2 id="tech-title" class="section-title">The tools behind<br>the <em>work.</em></h2><p class="section-summary">Technology serves the goal. I choose what fits the project and maintain the code carefully.</p></div><div class="tech-stack"><div><h3>Frontend</h3><p><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>Bootstrap</span></p></div><div><h3>Backend &amp; application</h3><p><span>PHP</span><span>Java</span><span>MySQL</span><span>Python</span><span>Node.js</span></p></div><div><h3>Workflow</h3><p><span>Git &amp; GitHub</span><span>Responsive UI</span><span>API integration</span><span>SEO fundamentals</span><span>Accessibility</span></p></div></div></div></section>
 <section class="section process-section" id="process" aria-labelledby="process-title"><div class="container"><div class="section-heading-row"><div><p class="eyebrow"><span>05 /</span> WORKING TOGETHER</p><h2 id="process-title" class="section-title">A simple process.<br><em>No surprises.</em></h2></div><p class="section-summary">Clear steps and communication, from the first idea to handover.</p></div><div class="process-steps"><article><span>01 / UNDERSTAND</span><h3>We talk</h3><p>Your goals, audience, requirements, timeline and what matters most.</p></article><article><span>02 / PLAN</span><h3>We map it out</h3><p>Agree on scope, visual direction and a realistic delivery approach.</p></article><article><span>03 / CREATE</span><h3>I build</h3><p>Design, development, testing and iteration with clear updates.</p></article><article><span>04 / LAUNCH</span><h3>We go live</h3><p>Final review, launch, handover and optional future improvements.</p></article></div></div></section>
-<section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container"><div class="contact-heading"><p class="eyebrow eyebrow-inverse"><span>06 /</span> LET'S CONNECT</p><h2 id="contact-title">Have a project?<br><em>Let's make it real.</em></h2><p>Share a few details and I'll be happy to discuss what you need. Based in Sri Lanka, open to projects worldwide.</p></div><div class="contact-columns"><div class="contact-direct"><a href="mailto:mhdhimas99@gmail.com"><svg class="icon " aria-hidden="true"><use href="#icon-mail"></use></svg><span><small>EMAIL</small><strong>mhdhimas99@gmail.com</strong></span><svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><a href="https://wa.me/94703883436" target="_blank" rel="noopener noreferrer"><svg class="icon " aria-hidden="true"><use href="#icon-whatsapp"></use></svg><span><small>WHATSAPP / AXYNTRA</small><strong>+94 70 388 3436</strong></span><svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><div class="contact-social"><span>FIND ME ONLINE</span><div class="social-set"><a class="social-link " href="https://github.com/Himazs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg class="icon " aria-hidden="true"><use href="#icon-github"></use></svg></a><a class="social-link " href="https://www.linkedin.com/in/mohammed-himas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg class="icon " aria-hidden="true"><use href="#icon-linkedin"></use></svg></a><a class="social-link " href="https://www.axyntra.lk/" target="_blank" rel="noopener noreferrer" aria-label="Axyntra website" title="Axyntra website"><svg class="icon " aria-hidden="true"><use href="#icon-globe"></use></svg></a></div></div></div><form id="contact-form" class="contact-form"><div class="form-grid"><label>Your name <span>*</span><input type="text" name="name" autocomplete="name" maxlength="100" placeholder="Your name" required></label><label>Email address <span>*</span><input type="email" name="email" autocomplete="email" maxlength="180" placeholder="you@company.com" required></label></div><div class="form-grid"><label>What do you need?<select name="type"><option>Business website</option><option>E-commerce website</option><option>Custom web application</option><option>Website redesign</option><option>Other / not sure yet</option></select></label><label>Estimated budget<select name="budget"><option>Not decided yet</option><option>Under $250</option><option>$250–$500</option><option>$500–$1,000</option><option>$1,000–$3,000</option><option>Above $3,000</option></select></label></div><label>Tell me a bit about your project <span>*</span><textarea name="details" minlength="10" maxlength="3000" rows="5" placeholder="What are you building? What does it need to do?" required></textarea></label><div class="form-buttons"><button class="button button-orange" type="submit">Prepare email <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></button><button class="button button-ghost" type="button" id="contact-whatsapp">Send via WhatsApp <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></button></div><p class="form-note" id="form-note" role="status">This static website opens an email or WhatsApp draft. Your message is only sent when you confirm in that app.</p></form></div></div></section>
+<section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container"><div class="contact-heading"><p class="eyebrow eyebrow-inverse"><span>06 /</span> LET'S CONNECT</p><h2 id="contact-title">Have a project?<br><em>Let's make it real.</em></h2><p>Share a few details and I'll be happy to discuss what you need. Based in Sri Lanka, open to projects worldwide.</p></div><div class="contact-columns"><div class="contact-direct"><a href="mailto:himasmohommad@gmail.com"><svg class="icon " aria-hidden="true"><use href="#icon-mail"></use></svg><span><small>EMAIL</small><strong>himasmohommad@gmail.com</strong></span><svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><a href="https://wa.me/94703883436" target="_blank" rel="noopener noreferrer"><svg class="icon " aria-hidden="true"><use href="#icon-whatsapp"></use></svg><span><small>WHATSAPP / AXYNTRA</small><strong>+94 70 388 3436</strong></span><svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><div class="contact-social"><span>FIND ME ONLINE</span><div class="social-set"><a class="social-link " href="https://github.com/Himazs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg class="icon " aria-hidden="true"><use href="#icon-github"></use></svg></a><a class="social-link " href="https://www.linkedin.com/in/mohammed-himas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg class="icon " aria-hidden="true"><use href="#icon-linkedin"></use></svg></a><a class="social-link " href="https://www.axyntra.lk/" target="_blank" rel="noopener noreferrer" aria-label="Axyntra website" title="Axyntra website"><svg class="icon " aria-hidden="true"><use href="#icon-globe"></use></svg></a></div></div></div><form id="contact-form" class="contact-form"><div class="form-grid"><label>Your name <span>*</span><input type="text" name="name" autocomplete="name" maxlength="100" placeholder="Your name" required></label><label>Email address <span>*</span><input type="email" name="email" autocomplete="email" maxlength="180" placeholder="you@company.com" required></label></div><div class="form-grid"><label>What do you need?<select name="type"><option>Business website</option><option>E-commerce website</option><option>Custom web application</option><option>Website redesign</option><option>Other / not sure yet</option></select></label><label>Estimated budget<select name="budget"><option>Not decided yet</option><option>Under $250</option><option>$250–$500</option><option>$500–$1,000</option><option>$1,000–$3,000</option><option>Above $3,000</option></select></label></div><label>Tell me a bit about your project <span>*</span><textarea name="details" minlength="10" maxlength="3000" rows="5" placeholder="What are you building? What does it need to do?" required></textarea></label><div class="form-buttons"><button class="button button-orange" type="submit">Prepare email <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></button><button class="button button-ghost" type="button" id="contact-whatsapp">Send via WhatsApp <svg class="icon " aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></button></div><p class="form-note" id="form-note" role="status">This static website opens an email or WhatsApp draft. Your message is only sent when you confirm in that app.</p></form></div></div></section>
 </main>
 <footer class="site-footer"><div class="container"><div class="footer-main"><div><a href="#top" class="footer-brand">h<span>.</span> Himas</a><p>Freelance web developer.<br>Founder, Axyntra Digital Solutions.</p></div><div class="footer-navigation"><div><small>EXPLORE</small><a href="#work">Selected work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div><div><small>ELSEWHERE</small><a href="https://github.com/Himazs" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/mohammed-himas/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.axyntra.lk/" target="_blank" rel="noopener noreferrer">Axyntra ↗</a></div></div></div><div class="footer-bottom"><span>© <span id="current-year">2026</span> Mohommad Himas. All rights reserved.</span><span>DESIGNED &amp; BUILT WITH PURPOSE — SRI LANKA</span><a href="#top">Back to top ↑</a></div></div></footer>
 <dialog class="gallery-dialog" id="gallery-dialog" aria-labelledby="gallery-heading"><div class="dialog-top"><div><small>PROJECT GALLERY</small><h2 id="gallery-heading">Selected work</h2></div><button type="button" class="dialog-close" id="gallery-close" aria-label="Close gallery"><svg class="icon " aria-hidden="true"><use href="#icon-x"></use></svg></button></div><div class="dialog-picture"><div class="dialog-fallback"><span>SELECTED / WORK</span><strong id="gallery-fallback-title">Project preview</strong></div><img id="gallery-image" alt=""></div><div class="dialog-bottom"><p id="gallery-caption">Project screenshots</p><div class="dialog-pager"><button type="button" id="gallery-prev" aria-label="Previous screenshot"><svg class="icon " aria-hidden="true"><use href="#icon-arrow-left"></use></svg></button><span id="gallery-count">01 / 01</span><button type="button" id="gallery-next" aria-label="Next screenshot"><svg class="icon " aria-hidden="true"><use href="#icon-arrow"></use></svg></button></div></div><div class="gallery-thumbs" id="gallery-thumbs"></div></dialog>
@@ -273,13 +318,22 @@ const qa = selector => [...document.querySelectorAll(selector)];
 // Show successfully loaded images, preserve designed fallbacks otherwise.
 function trackImage(el) {
   if (!el) return;
-  const markLoaded = () => { el.classList.add('image-ready'); };
+  const markLoaded = () => {
+    el.classList.add('image-ready');
+    // Project titles belong below a real screenshot, not on top of it.
+    if (el.classList.contains('project-cover')) {
+      el.closest('.project-media')?.classList.add('has-cover');
+    }
+  };
   const tryFallback = () => {
     if (el.dataset.fallbackSrc && !el.dataset.triedFallback) {
       el.dataset.triedFallback = 'true';
       el.src = el.dataset.fallbackSrc;
     } else {
       el.classList.remove('image-ready');
+      if (el.classList.contains('project-cover')) {
+        el.closest('.project-media')?.classList.remove('has-cover');
+      }
       el.style.display = 'none';
     }
   };
@@ -446,7 +500,7 @@ form?.addEventListener('submit',e=>{
   const subject=encodeURIComponent('Website project enquiry — Himas portfolio');
   const body=encodeURIComponent(message);
   notice.textContent='Your email app will open with the completed draft. Review it and press Send there.';
-  window.location.href=`mailto:mhdhimas99@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href=`mailto:himasmohommad@gmail.com?subject=${subject}&body=${body}`;
 });
 q('#contact-whatsapp')?.addEventListener('click',()=>{
   const message=inquiry();
